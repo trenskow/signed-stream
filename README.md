@@ -23,7 +23,8 @@ const fileSignature = async (file) => {
 	});
 
 	return await createReadStream(file)
-		.pipe(signStream);
+		.pipe(signStream)
+		.signature();
 
 };
 ````
@@ -47,7 +48,8 @@ const validateSignature = async (file, signature, encoding) => {
 	});
 
 	const valid = await createReadStream(file)
-		.pipe(verifyStream);
+		.pipe(verifyStream)
+		.valid();
 
 	if (!valid) {
 		throw new Error('File has incorrect signature.');
@@ -73,10 +75,10 @@ readStream
 	.pipe(verifyStream)
 	.pipe(outputStream);
 
-console.info(`File is valid: ${await verifyStream}`);
+console.info(`File is valid: ${await verifyStream.valid()}`);
 ````
 
-> This also works with `SignStream`.
+> This also works with `SignStream`'s `signature()` method.
 
 # License
 

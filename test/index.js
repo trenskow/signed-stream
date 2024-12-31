@@ -69,7 +69,7 @@ describe('@trenskow/signed-stream', () => {
 
 		signStream.end();
 
-		return expect(signStream).to.eventually.be.equal(signature);
+		return expect(signStream.signature()).to.eventually.be.equal(signature);
 
 	});
 
@@ -86,7 +86,7 @@ describe('@trenskow/signed-stream', () => {
 
 		verifyStream.end();
 
-		return expect(verifyStream).to.eventually.be.true;
+		return expect(verifyStream.valid()).to.eventually.be.true;
 
 	});
 
@@ -103,7 +103,7 @@ describe('@trenskow/signed-stream', () => {
 
 		verifyStream.end();
 
-		return expect(verifyStream).to.eventually.be.false;
+		return expect(verifyStream.valid()).to.eventually.be.false;
 
 	});
 
