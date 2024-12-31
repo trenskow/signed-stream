@@ -18,8 +18,7 @@ const fileSignature = async (file) => {
 
 	const signStream = new SignStream({
 		algorithm: 'SHA256', // Default is `SHA256`,
-		privateKey: '-----BEGIN PUBLIC KEY-----\n-...',
-		encoding: 'base64', // Default is `base64`.
+		privateKey: '-----BEGIN PUBLIC KEY-----\n-...'
 	});
 
 	return await createReadStream(file)
