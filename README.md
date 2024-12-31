@@ -24,7 +24,7 @@ const fileSignature = async (file) => {
 
 	return await createReadStream(file)
 		.pipe(signStream)
-		.signature();
+		.signature('base64'); // Default encoding is none (returns a `Buffer`).
 
 };
 ````

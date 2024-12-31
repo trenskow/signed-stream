@@ -69,7 +69,7 @@ describe('@trenskow/signed-stream', () => {
 
 		signStream.end();
 
-		return expect(signStream.signature()).to.eventually.be.equal(signature);
+		return expect(signStream.signature('base64')).to.eventually.be.equal(signature);
 
 	});
 
