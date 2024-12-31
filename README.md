@@ -76,6 +76,8 @@ readStream
 console.info(`File is valid: ${await verifyStream}`);
 ````
 
+> This also works with `SignStream`.
+
 # License
 
 See license in LICENSE.
