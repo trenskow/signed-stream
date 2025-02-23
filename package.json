@@ -1,6 +1,6 @@
 {
 	"name": "@trenskow/signed-stream",
-	"version": "0.1.14",
+	"version": "0.1.15",
 	"description": "A package for cryptographically signing or verifying a stream.",
 	"main": "index.js",
 	"type": "module",
